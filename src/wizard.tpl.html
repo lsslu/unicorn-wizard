@@ -1,0 +1,37 @@
+<div class="uc-wizard">
+    <div class="uc-wz-step-bar">
+        <ul>
+            <li ng-repeat="step in steps"
+                ng-class="{'active': step.actived, 'complete': !step.actived && step.completed}"
+                style="width: {{::stepWidth}}">
+                <a ng-click="goTo(step)">
+                    <div class="step" ng-class="{'ok': step.completed}">
+                        <i class="glyphicon glyphicon-ok" ng-show="step.completed"></i>
+                        <span ng-hide="step.completed">{{::$index+1}}</span>
+                    </div>
+                    <span class="title">{{::step.title}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content" ng-transclude>
+
+    </div>
+
+    <div class="button-bar">
+        <ul>
+            <li>
+                <button ng-click="prev()" ng-show="buttons.prev" class="btn btn-sm btn-default">prev</button>
+            </li>
+            <li>
+                <button ng-click="next()" ng-show="buttons.next" class="btn btn-sm  btn-primary">next</button>
+                <button ng-click="finish()" ng-show="buttons.finish" class="btn btn-sm btn-success">finish</button>
+                <button ng-click="cancel()" ng-show="buttons.cancel" class="btn btn-sm btn-default">cancel</button>
+            </li>
+        </ul>
+
+
+
+    </div>
+</div>

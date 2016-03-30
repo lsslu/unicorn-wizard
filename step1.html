@@ -1,0 +1,16 @@
+<div>
+    <ng-form name="step1" uc-form-locator novalidate>
+        <div class="form-group" ng-class="{'has-error': step1.name.$invalid}">
+            <label>name:</label>
+            <input type="text" class="form-control" name="name" ng-model="data.name" required />
+        </div>
+        <div class="form-group" ng-class="{'has-error': step1.email.$invalid}">
+            <label>email:</label>
+            <input type="email" class="form-control" name="email" ng-model="data.email" required />
+        </div>
+        <div>
+            <span class="text-danger" ng-show="step1.email.$error.required">please input your email address.</span>
+            <span class="text-danger" ng-show="!step1.email.$error.required && step1.email.$invalid">email address is incorrect.</span>
+        </div>
+    </ng-form>
+</div>
