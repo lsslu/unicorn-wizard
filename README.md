@@ -34,6 +34,7 @@ angular.module('app', ['unicorn.wizard', 'unicorn.decorators']);
 </uc-wizard>
 ````
 上述代码包含如下内容：
+
 1) `uc-wizard` 指令。 该指令包含如下属性:
 * **on-finish**: wizard完成时，触发的事件，可通过它来提交表单数据，该事件绑定的方法配置在当前view的controller中。
 * **height**: 设定wizard的高度，如果未空或未设置，默认高度为0。
