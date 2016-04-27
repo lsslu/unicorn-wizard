@@ -14,7 +14,6 @@ Unicorn wizard 依赖以下模块：
 `
 angular.module('app', ['unicorn.wizard', 'unicorn.decorators']);
 `
-
 然后在页面输入如下代码，你将会在页面上看到一个unicorn wizard的demo展示：
 
 ````html
