@@ -1,20 +1,21 @@
 # unicorn-wizard
-Unicorn wizard is a component that will make it easy for you to create wizards in your page. It's no need for you to configure an opiton variable in controller or add submit button for each step by yourself.
+Unicorn wizard 是一个angular wizard组件。无须在controller中添加组件配置，也无须配置每一步的buttons，只需设置每一步step以及总的controller即完成wizard的设定。
 
 
-# Dependencies
-Unicorn wizard depends on Angular and unicorn-decorators. unicorn-decorators is supplied in source code, you can find it in dist folder.
+# 依赖项（Dependencies）
+Unicorn wizard 依赖以下模块：
+1、Angular
+2、unicorn-decorators （已在源码中提供，见dist目录）
 
 # Starter Guide
 ## First Example
-The first thing we need to do is add a dependency to the module you want to apply unicorn wizard.
-
-We can do this simply by doing:
+先行预览请访问index.html。
+首先添加unicorn wizard的依赖注入，代码如下：
 `
 angular.module('app', ['unicorn.wizard', 'unicorn.decorators']);
 `
 
-Now, in the page, you can just add a wizard  as follow:
+然后在页面输入如下代码，你将会在页面上看到一个unicorn wizard的demo展示：
 
 ````html
 <uc-wizard on-finish="finish" height="200">
@@ -32,11 +33,11 @@ Now, in the page, you can just add a wizard  as follow:
 	<uc-wz-step title="finish"></uc-wz-step>
 </uc-wizard>
 ````
-This will look like the following when you're in the second step:
+上述代码包含如下内容：
+1) `uc-wizard` 指令。 该指令包含如下属性:
+* **on-finish**: wizard完成时，触发的事件，可通过它来提交表单数据，该事件绑定的方法配置在当前view的controller中。
+* **height**: 设定wizard的高度，如果未空或未设置，默认高度为0。
 
-Let's go step by step to see how this works:
-1) You need to declare a master `uc-wizard` directive. This wizard directive has the following options as attributes:
-* **on-finish**: Here you can put a function name that you're going to call it when the wizard is finished.
-* **height**: The wizard's height. Default value is zero.
+2) 在`uc-wizard`中，你可以设置任意多个`uc-wz-step`。 每个step必须有一个title属性，且title不可重复。在step中可以任意填写内容，如果在step内使用form或者ng-form，需要追加装饰指令`uc-form-locator`，该指令会将form对象传递给wizard指令，以便在切换step时自动验证表单。
 
-2) Inside the wizard, we can have as many steps as we want. Each step must has a title which is going to be used to identify it. Inside each step, we put whatever we want. Other directives,
+
