@@ -4,8 +4,8 @@ Unicorn wizard 是一个angular wizard组件。无须在controller中添加组�
 
 # 依赖项（Dependencies）
 Unicorn wizard 依赖以下模块：
-1、Angular
-2、unicorn-decorators （已在源码中提供，见dist目录）
+* Angular
+* unicorn-decorators （已在源码中提供，见dist目录）
 
 # Starter Guide
 ## First Example
